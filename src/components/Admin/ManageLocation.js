@@ -71,8 +71,8 @@ const ManageLocation = () => {
                                             <td>Noida59 kirtimaan ,1stflor</td>
                                             <td>
                                                 <Link className="mange-admins-edit-btn"><i className="fas fa-edit"></i></Link>
-                                                <Link className="mange-admins-dlt-btn">                       <DeleteForever style={{ color: '#FF5C93' }} />
-                                                </Link></td>
+                                                <Link className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} /></Link>
+                                            </td>
                                             <td>
                                                 <BootstrapSwitchButton
                                                     onlabel='Active'

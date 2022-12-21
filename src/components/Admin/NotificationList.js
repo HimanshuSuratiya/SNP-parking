@@ -150,7 +150,7 @@ export default function CustomizedDialogs() {
                         </div>
                     </Box>
                 </DialogContent>
-                <DialogActions className=''>
+                <DialogActions>
                     <Button autoFocus onClick={handleClose}>
                         Cancle
                     </Button>

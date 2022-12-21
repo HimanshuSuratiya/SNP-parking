@@ -52,6 +52,11 @@ export default function Header(props) {
   const [profileMenu, setProfileMenu] = useState(null);
   const [isSearchOpen, setSearchOpen] = useState(false);
 
+  const signOutUser = () => {
+    localStorage.setItem('isAuthenticated', 0)
+    window.location.reload();
+  }
+
   return (
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
@@ -180,7 +185,10 @@ export default function Header(props) {
             <Typography
               className={classes.profileMenuLink}
               color="primary"
-              onClick={() => signOut(userDispatch, props.history)}
+              onClick={() =>
+                signOutUser()
+                // signOut(userDispatch, props.history)
+              }
             >
               signOut
             </Typography>

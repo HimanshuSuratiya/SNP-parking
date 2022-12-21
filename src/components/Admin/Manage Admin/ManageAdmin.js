@@ -72,8 +72,7 @@ const ManageAdmin = () => {
                                                 <td>full/remain</td>
                                                 <td>
                                                     <Link to={`/app/edit-admin/}`} className="mange-admins-edit-btn"><i className="fas fa-edit"></i></Link>
-                                                    <Link to={`/app/admin/`} className="mange-admins-dlt-btn">                                                            <DeleteForever style={{ color: '#FF5C93' }} />
-                                                    </Link>
+                                                    <Link to={`/app/admin/`} className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} /></Link>
                                                 </td>
                                                 <td>
                                                     <BootstrapSwitchButton

@@ -1,17 +1,7 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { URL } from "../../../url/url";
-import { toast } from "react-toastify";
 
 const ContactDetails = () => {
-  const history = useHistory();
-  const [Phone_number, setPhone_number] = useState([]);
-  const [email, setEmail] = useState([]);
-  const [address, setAddress] = useState([]);
-  const [data, getData] = useState([]);
-
-  const createContactDetails = (e) => { }
 
   return (
     <>
@@ -66,8 +56,6 @@ const ContactDetails = () => {
                 </div>
                 <div className="contact-form-submint-btn-area">
                   <a
-                    href="#/app/contact-us"
-                    onClick={createContactDetails}
                     className="contact-form-submint-btn"
                   >
                     Submit

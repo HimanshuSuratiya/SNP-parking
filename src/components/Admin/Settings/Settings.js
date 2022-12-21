@@ -1,141 +1,11 @@
-import * as Axios from "axios";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { URL } from "../../../url/url";
+import React, { useState } from "react";
+
 const Settings = () => {
   const [type, setType] = useState(1);
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [address, setAddress] = useState("")
-  const [country, setCountry] = useState("")
-  const [state, setState] = useState("")
-  const [city, setCity] = useState("")
-  const [postal, setPostal] = useState("")
-  const [gender, setGender] = useState("")
-  const [data, getData] = useState("")
-
-  useEffect(() => {
-    getadmindata()
-  }, [])
-
-  const getadmindata = async () => {
-    const req = {
-      'id': localStorage.getItem("superAdminId")
-    }
-
-    await axios.post(URL + '/getsettingsdata', req).then((response) => {
-      console.log(response)
-      getData(response.data.data[0])
-      // setData(response.data.data[0])
-      setName(response.data.data[0]['name'])
-      setEmail(response.data.data[0]['email'])
-      setAddress(response.data.data[0]['address'])
-      setPhone(response.data.data[0]['phone_number'])
-      setCountry(response.data.data[0]['country'])
-      setState(response.data.data[0]['state'])
-      setCity(response.data.data[0]['city'])
-      setGender(response.data.data[0]['gender'])
-      setPostal(response.data.data[0]['postal'])
-    })
-  }
-
-  const submitform = async () => {
-    let req = {
-      'id': localStorage.getItem("superAdminId"),
-      'name': name,
-      'email': email,
-      'phone': phone,
-      'address': address,
-      'country': country,
-      'state': state,
-      'city': city,
-      'postal': postal,
-      'gender': gender,
-    }
-    let res = await axios.post(URL + '/updateadmin', req).then(() => {
-      alert('Data Updated Successfully')
-      console.log(res)
-    }).catch(err => { console.log(err) })
-  }
-
-  const [getcountrylist, setCountrylist] = useState([]);
-  const [getstatelist, setStatelist] = useState([]);
-  const [getcitylist, setCitylist] = useState([]);
-  useEffect(() => {
-    Axios.get(URL + "/countriesList", {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    }).then((res) => {
-      setCountrylist(res.data.data)
-    }).catch((err) => {
-      console.log(err)
-    })
-  }, [])
-
-  const stateShow = (countryid1) => {
-    Axios.post(URL + `/statesList/`, { cid: countryid1 }, {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    }).then((res) => {
-      console.log(res)
-      setStatelist(res.data.data);
-      console.log(res.data.data);
-    }).catch((err) => {
-      console.log(err)
-    })
-  }
-
-  const cityShow = (stateid1) => {
-    Axios.post(URL + `/citiesList/`, { sid: stateid1 }, {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    }).then((res) => {
-      console.log(res)
-      setCitylist(res.data.data)
-    }).catch((err) => {
-      console.log(err)
-    })
-  }
-
-  const handlecountry = (e) => {
-    setCountry(e.target.value);
-    stateShow(e.target.value);
-  }
-
-  const handlestate = (e) => {
-    const getstateid = e.target.value;
-    setState(getstateid)
-    cityShow(getstateid)
-  }
-
+  const [country, setCountry] = useState("India")
+  const [gender, setGender] = useState("Male")
   const [password, setPassword] = useState("");
   const [newpassword, setNewpassword] = useState("");
-
-  const ChangePassword = async () => {
-    let reqq = {
-      'id': localStorage.getItem('superAdminId'),
-      password: password,
-      newpassword: newpassword,
-    }
-    console.log(reqq)
-    await Axios.post(URL + '/resetpassword', reqq, {
-      Accept: 'Application/json',
-      'Content-Type': 'Application/json',
-    }).then((res) => {
-      alert('password changed successfully')
-      console.log(res)
-    }).catch((err) => {
-      console.log(err + "error")
-    })
-    setPassword('')
-    setNewpassword('')
-  }
-
-
-
-
-
 
   return (
     <>
@@ -191,29 +61,6 @@ const Settings = () => {
                         Password
                       </button>
                     </li>
-                    {/* <li className="nav-item" role="presentation">
-                      <button
-                        onClick={() => setType(3)}
-                        className={
-                          type == 3
-                            ? "nav-link tab-btn  active"
-                            : "nav-link tab-btn "
-                        }
-                        id="purchase-plan-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#purchase-plan"
-                        type="button"
-                        role="tab"
-                        aria-controls="purchase-plan"
-                        aria-selected="false"
-                      >
-                        <i
-                          className="fa fa-cart-arrow-down"
-                          aria-hidden="true"
-                        ></i>
-                        Purchase Plan
-                      </button>
-                    </li> */}
                   </ul>
                 </div>
                 <div className="tab-content" id="myTabContent">
@@ -243,7 +90,6 @@ const Settings = () => {
                             </div>
                             <div className="change-photo-btn-area">
                               <a href="#" className="change-poto-btn">
-
                                 <i
                                   className="fa fa-camera"
                                   aria-hidden="true"
@@ -263,17 +109,13 @@ const Settings = () => {
                                   <h2>Country</h2>
                                 </div>
                               </div>
-
                               <div className="col-lg-6">
                                 <div className="personal-information-details">
-                                  <p>
-                                    {data.name}
-                                  </p>
-
-                                  <p>{data.email}</p>
-                                  <p>{data.phone_number}</p>
-                                  <p>{data.gender}</p>
-                                  <p>{data.country}</p>
+                                  <p>Himanshu Suratiya</p>
+                                  <p>Himanshu12345@gmail.com</p>
+                                  <p>1234567890</p>
+                                  <p>Male</p>
+                                  <p>India</p>
                                 </div>
                               </div>
                             </div>
@@ -298,10 +140,7 @@ const Settings = () => {
                                   <input
                                     type="text"
                                     className="form-control field"
-                                    onChange={(event) => {
-                                      setName(event.target.value);
-                                    }}
-                                    defaultValue={data.name}
+                                    defaultValue={'Himanshu Suratiya'}
                                     name="holdername"
                                     placeholder="Enter First Name"
                                     autofocus=""
@@ -316,10 +155,7 @@ const Settings = () => {
                                   <input
                                     type="text"
                                     className="form-control field"
-                                    onChange={(event) => {
-                                      setEmail(event.target.value);
-                                    }}
-                                    defaultValue={data.email}
+                                    defaultValue={'Himanshu12345@gmail.com'}
                                     name="holdername"
                                     placeholder="Enter Email ID"
                                     autofocus=""
@@ -334,10 +170,7 @@ const Settings = () => {
                                   <input
                                     type="text"
                                     className="form-control field"
-                                    onChange={(event) => {
-                                      setPhone(event.target.value);
-                                    }}
-                                    defaultValue={data.phone_number}
+                                    defaultValue={'1234567890'}
                                     name="holdername"
                                     placeholder="Enter Contact Number"
                                     autofocus=""
@@ -352,8 +185,7 @@ const Settings = () => {
                                   <div className="profile-input-box-area">
                                     <select
                                       className="form-control"
-
-
+                                      value={gender}
                                       onChange={(event) => {
                                         setGender(event.target.value);
                                       }}
@@ -374,10 +206,7 @@ const Settings = () => {
                                   <input
                                     type="text"
                                     className="form-control field"
-                                    defaultValue={data.address}
-                                    onChange={(event) => {
-                                      setAddress(event.target.value);
-                                    }}
+                                    defaultValue={'House no 128 Noida sector-59'}
                                     name="holdername"
                                     placeholder="Enter Address"
                                     autofocus=""
@@ -394,20 +223,15 @@ const Settings = () => {
                                       className="form-control"
                                       name="cars"
                                       id="cars"
-                                      onChange={(e) => handlecountry(e)}
+                                      value={country}
+                                      onChange={(event) => {
+                                        setCountry(event.target.value);
+                                      }}
                                     >
-                                      <option>--Choose Country--</option>
-
-                                      {
-                                        getcountrylist.map((e) => {
-                                          return (
-                                            <option value={e.id}>{e.name}</option>
-                                          )
-                                        })
-                                      }
-
-
-
+                                      <option value="">Select Country</option>
+                                      <option value="India">India</option>
+                                      <option value="USA">USA</option>
+                                      <option value="AUstralia">AUstralia</option>
                                     </select>
                                   </div>
                                 </div>
@@ -420,19 +244,8 @@ const Settings = () => {
                                       className="form-control"
                                       name="cars"
                                       id="cars"
-                                      onChange={(e) => handlestate(e)}
-
                                     >
                                       <option >Select State</option>
-                                      {
-                                        getstatelist.map((e) => {
-                                          return (
-                                            <option value={e.id}>{e.statename}</option>
-                                          )
-                                        })
-                                      }
-
-
                                     </select>
                                   </div>
                                 </div>
@@ -443,24 +256,10 @@ const Settings = () => {
                                   <div className="profile-input-box-area">
                                     <select
                                       className="form-control"
-
                                       name="cars"
                                       id="cars"
-                                      onChange={(e) => setCity(e.target.value)}
-
-
                                     >
                                       <option value="">Select City</option>
-
-                                      {
-                                        getcitylist.map((e) => {
-                                          return (
-                                            <option value={e.id}>{e.cityname}</option>
-                                          )
-                                        })
-                                      }
-
-
                                     </select>
                                   </div>
                                 </div>
@@ -471,10 +270,6 @@ const Settings = () => {
                                   <input
                                     type="text"
                                     className="form-control field"
-                                    defaultValue={data.postal}
-                                    onChange={(event) => {
-                                      setPostal(event.target.value);
-                                    }}
                                     name="holdername"
                                     placeholder="Enter Postal/ZIP Code"
                                     autofocus=""
@@ -487,7 +282,6 @@ const Settings = () => {
                                 <div className="contact-form-submint-btn-area">
                                   <a
                                     href="javascript: void(0)"
-                                    onClick={submitform}
                                     className="contact-form-submint-btn"
                                   >
                                     Submit
@@ -554,7 +348,6 @@ const Settings = () => {
                               onChange={(e) => setNewpassword(e.target.value)}
                               required="true"
                               value={newpassword}
-
                               className="form-control"
                               placeholder="Enter New Password"
                             />
@@ -577,9 +370,7 @@ const Settings = () => {
                               name="confirmpassword"
                               required="true"
                               value={newpassword}
-
                               onChange={(e) => setNewpassword(e.target.value)}
-
                               className="form-control"
                               placeholder="Enter Confirm Password"
                             />
@@ -590,8 +381,6 @@ const Settings = () => {
                     <div className="change-password-submit-area">
                       <a
                         href="javascript:void(0);"
-                        onClick={ChangePassword}
-
                         className="submit-password-change-btn"
                       >
                         Submit
@@ -612,7 +401,3 @@ const Settings = () => {
 };
 
 export default Settings;
-
-
-
-//<a class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary" tabindex="0" role="button" aria-disabled="false" href="#/app/add-admin"><span class="MuiButton-label">Add Admin</span><span class="MuiTouchRipple-root"></span></a>

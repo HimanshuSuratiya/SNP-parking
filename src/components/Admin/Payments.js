@@ -16,12 +16,14 @@ const Payments = () => {
     };
 
     const data = [
-        { id: '1', add: 'Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522 (257) 563-7401', cap: '100', ic1: <i className="fas fa-edit"></i>, ic2: <DeleteForever style={{ color: '#FF5C93' }} /> },
-        { id: '2', add: 'Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522 (257) 563-7401', cap: '100', ic1: <i className="fas fa-edit"></i>, ic2: <DeleteForever style={{ color: '#FF5C93' }} /> },
-        { id: '3', add: 'Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522 (257) 563-7401', cap: '100', ic1: <i className="fas fa-edit"></i>, ic2: <DeleteForever style={{ color: '#FF5C93' }} /> },
-        { id: '4', add: 'Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522 (257) 563-7401', cap: '100', ic1: <i className="fas fa-edit"></i>, ic2: <DeleteForever style={{ color: '#FF5C93' }} /> },
-        { id: '5', add: 'Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522 (257) 563-7401', cap: '100', ic1: <i className="fas fa-edit"></i>, ic2: <DeleteForever style={{ color: '#FF5C93' }} /> },
+        { id: '1', name: 'Himanshu Suratiya', bookingId: '741258963', payment: '$-40', date: '02/11/2022', time: '02:54 pm' },
+        { id: '2', name: 'Vishal Singh', bookingId: '369852147', payment: '$-50', date: '04/12/2022', time: '08:27 am' },
+        { id: '3', name: 'Sourabh Shukla', bookingId: '789654123', payment: '$-60', date: '02/11/2022', time: '12:00 am' },
+        { id: '4', name: 'Shivam Suratiya', bookingId: '123654987', payment: '$-70', date: '02/10/2022', time: '07:00 am' },
+        { id: '5', name: 'Pintu Kashyap', bookingId: '748596321', payment: '$-80', date: '02/11/2021', time: '03:04 pm' },
+        { id: '6', name: 'Virender Kumar', bookingId: '485963217', payment: '$-90', date: '02/11/2022', time: '02:54 pm' },
     ]
+
     return (
         <>
             <div className="container-fluid ">
@@ -75,14 +77,12 @@ const Payments = () => {
                                     data.map((item) => (
                                         <tr>
                                             <th scope="row">{item.id}</th>
-                                            <td>656565</td>
-                                            <td>Vishal Singh</td>
-                                            <td>$ 852</td>
-                                            <td>22/12/2032</td>
-                                            <td>09:04 pm</td>
-                                            <td>
-                                                <Link className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} /></Link>
-                                            </td>
+                                            <td>{item.bookingId}</td>
+                                            <td>{item.name}</td>
+                                            <td>{item.payment}</td>
+                                            <td>{item.date}</td>
+                                            <td>{item.time}</td>
+                                            <td><Link className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} /></Link></td>
                                         </tr>
                                     ))
                                 }

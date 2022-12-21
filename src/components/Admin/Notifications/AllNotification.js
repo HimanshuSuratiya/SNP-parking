@@ -1,11 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Pagination from '@mui/material/Pagination'
 import NotificationList from '../../Admin/NotificationList'
 
 const AllNotification = () => {
-  const [type, setType] = useState(1);
-  const [data, getData] = useState([]);
+  const data = [
+    { id: '1', name: 'Himanshu Suratiya', title: 'For new parking', message: 'You are the best person , your lovely person', date: '02/11/2022' },
+    { id: '2', name: 'Vishal Singh', title: 'For thank ypu', message: 'You are the best person , your lovely person', date: '04/12/2022' },
+    { id: '3', name: 'Sourabh Shukla', title: 'please visist again', message: 'You are the best person , your lovely person', date: '02/11/2022' },
+    { id: '4', name: 'Shivam Suratiya', title: 'something went wrong', message: 'You are the best person , your lovely person', date: '02/10/2022' },
+    { id: '5', name: 'Pintu Kashyap', title: 'Park new car', message: 'You are the best person , your lovely person', date: '02/11/2021' },
+    { id: '6', name: 'Virender Kumar', title: 'Parking-6', message: 'You are the best person , your lovely person', date: '02/11/2022' },
+  ]
 
   return (
     <div className="page-wrapper" >
@@ -36,31 +42,21 @@ const AllNotification = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>
-                        Sourav
-                      </td>
-                      <td>For Thank you</td>
-                      <td>You are the best person , your lovely person</td>
-                      <td>
-                        04/12/2022
-                      </td>
-                      <td>
-                        <Link
-                          to={`/app/notification-details/`}
-                          className="mange-admins-edit-btn"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </Link>
-                        <Link
-                          to={`/app/notifications/`}
-                          className="mange-admins-dlt-btn"
-                        >
-                          <i class="far fa-trash-alt"></i>
-                        </Link>
-                      </td>
-                    </tr>
+                    {data.map((item) => {
+                      return (
+                        <tr>
+                          <td>{item.id}</td>
+                          <td>{item.name}</td>
+                          <td>{item.title}</td>
+                          <td>{item.message}</td>
+                          <td>{item.date}</td>
+                          <td>
+                            <Link to={`/app/notification-details/`} className="mange-admins-edit-btn"><i class="fas fa-eye"></i></Link>
+                            <Link to={`/app/notifications/`} className="mange-admins-dlt-btn" ><i class="far fa-trash-alt"></i></Link>
+                          </td>
+                        </tr>
+                      )
+                    })}
                   </tbody>
                 </table>
                 <Pagination count={10} color="primary" />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import Pagination from '@mui/material/Pagination'
@@ -51,7 +51,7 @@ const ManageMerchants = () => {
                                         </thead>
                                         <tbody>
                                             <tr >
-                                                <td></td>
+                                                <td>1</td>
                                                 <td>Vishal Singh</td>
                                                 <td>vksingh2992000@gmail.com</td>
                                                 <td>8076053744</td>
