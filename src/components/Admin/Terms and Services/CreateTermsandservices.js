@@ -1,53 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Axios from "axios";
-import { URL } from "../../../url/url";
+import React from "react";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const CreateTermsandservices = () => {
-  const [heading, setHeading] = useState([])
-  const [descriptions, setDescriptions] = useState([])
-  const [data, getData] = useState([])
-
-  const createTerms = (e) => {
-    e.preventDefault();
-    Axios.post(
-      URL + "/createtermsandservices",
-      {
-        heading: heading,
-        descriptions: descriptions,
-      },
-      {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    )
-      .then((res) => {
-        console.log(res + 'jai bajrang')
-        alert("Terms and Conditions Created  Successfully");
-        console.log("data submitted successfully");
-      })
-      .catch((err) => {
-        console.log(err);
-        console.log("data not submitted");
-      });
-  };
-
-  // const URL = "http://localhost:5000/gettermsandservices";
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = () => {
-    fetch(URL + "/gettermsandservices")
-      .then((res) => res.json())
-      .then((response) => {
-        console.log(response.data[0]);
-        getData(response.data[0])
-        setHeading(response.data[0]['heading'])
-        setDescriptions(response.data[0]['descriptions'])
-      });
-  };
 
   return (
     <>
@@ -64,7 +19,7 @@ const CreateTermsandservices = () => {
                 <form className="send-notifications-form-area">
                   <div className="form-group">
                     <label>Heading</label>
-                    <input type="text" className="form-control field" defaultValue={data.heading} onChange={(e) => { setHeading(e.target.value) }} name="holdername" placeholder="Enter Heading" autofocus="" required="" id="name" />
+                    <input type="text" className="form-control field" name="holdername" placeholder="Enter Heading" autofocus="" required="" id="name" />
                   </div>
                   <div className="form-group">
                     <label>Description</label>
@@ -74,20 +29,10 @@ const CreateTermsandservices = () => {
                       onReady={editor => {
                         console.log('Editor is ready to use!', editor);
                       }}
-                      onChange={(event, editor) => {
-                        const data = editor.getData();
-                        console.log({ event, editor, data });
-                      }}
-                      onBlur={(event, editor) => {
-                        console.log('Blur.', editor);
-                      }}
-                      onFocus={(event, editor) => {
-                        console.log('Focus.', editor);
-                      }}
                     />
                   </div>
                   <div className="contact-form-submint-btn-area">
-                    <a href="#" onClick={createTerms} className="contact-form-submint-btn">Submit</a>
+                    <a href="#" className="contact-form-submint-btn">Submit</a>
                   </div>
                 </form>
               </div>

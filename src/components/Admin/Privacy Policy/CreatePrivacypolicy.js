@@ -1,42 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { URL } from "../../../url/url";
+import React from "react";
 
 const CreatePrivacypolicy = () => {
-    const [heading, setHeading] = useState([]);
-    const [descriptions, setDescriptions] = useState([]);
-    const [data, getData] = useState([]);
-
-    const createPolicy = (e) => {
-        console.log(heading)
-        e.preventDefault()
-        axios.post(URL + "/createprivacy", {
-            heading: heading,
-            descriptions: descriptions,
-        }, {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-        }).then(() => {
-            alert("Policy Created successfully")
-
-        }).catch((err) => {
-            console.log(err);
-        })
-    }
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    const fetchData = () => {
-        fetch(URL + "/getprivacypolicy")
-            .then((res) => res.json())
-            .then((response) => {
-                getData(response.data[0])
-                setHeading(response.data[0]['heading'])
-                setDescriptions(response.data[0]['descriptions'])
-            });
-    };
 
     return (
         <>
@@ -53,14 +17,14 @@ const CreatePrivacypolicy = () => {
                                 <form className="send-notifications-form-area">
                                     <div className="form-group">
                                         <label>Heading</label>
-                                        <input type="text" className="form-control field" defaultValue={data.heading} onChange={(e) => { setHeading(e.target.value) }} name="holdername" placeholder="Enter Heading" autofocus="" required="" id="name" />
+                                        <input type="text" className="form-control field" name="holdername" placeholder="Enter Heading" autofocus="" required="" id="name" />
                                     </div>
                                     <div className="form-group">
                                         <label>Description</label>
-                                        <textarea className="form-control" defaultValue={data.descriptions} onChange={(e) => { setDescriptions(e.target.value) }} placeholder="Enter Description"></textarea>
+                                        <textarea className="form-control" placeholder="Enter Description"></textarea>
                                     </div>
                                     <div className="contact-form-submint-btn-area">
-                                        <a href="#" onClick={createPolicy} className="contact-form-submint-btn">Submit</a>
+                                        <a href="#" className="contact-form-submint-btn">Submit</a>
                                     </div>
                                 </form>
                             </div>
