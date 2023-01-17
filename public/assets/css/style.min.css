@@ -16,12 +16,6 @@
   -moz-transform: rotate(45deg)
 }
 
-/*!
- * Bootstrap v5.0.0-beta1 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -15910,12 +15904,10 @@ body {
   color: #ffffff;
 }
 
-
 .create-application-btn:hover {
-  background-color: #ff0f60;
+  background-color: #0a5dc2;
   color: #fff;
 }
-
 
 .application-detail-main-area .table-heading-parnets {
   color: #4A4A4A;
@@ -15923,7 +15915,6 @@ body {
   font-weight: 500;
   line-height: 1.5rem;
 }
-
 
 .application-detail-main-area .table-heading-parnets-2 {
   color: #4A4A4A;
@@ -15936,7 +15927,6 @@ body {
   display: flex;
 }
 
-
 .upload-file-picks img {
   width: 100%;
   height: 103px;
@@ -15944,7 +15934,6 @@ body {
   border: 2px solid #ccc;
   padding: 2px;
 }
-
 
 .upload-file-picks {
   width: 100%;
@@ -15956,7 +15945,6 @@ body {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  /*background-color:#FF5C93;*/
   text-align: center;
   margin: 0px 10px 0px 0px;
   line-height: 35px;
@@ -15972,20 +15960,17 @@ body {
   margin: 0px 10px 0px 0px;
 }
 
-
 .company-user-icon-area img {
   width: 35px;
   height: 35px;
   border-radius: 50%;
 }
 
-
 .user-icon-area i {
   font-size: 20px;
   line-height: 35px;
   color: #fff;
 }
-
 
 .user-name-area h5 {
   margin: 5px 0px 0px 0px;
@@ -16003,14 +15988,12 @@ body {
   width: 100%;
 }
 
-
 .application-list-create-app-btn-area p {
   font-size: 18px;
   font-weight: 500;
   width: 80%;
   padding: 0px 0px 0px 15px;
 }
-
 
 .text-center-padding {
   text-align: center;
@@ -16029,17 +16012,14 @@ table td {
   background-color: #F6F7FF;
 }
 
-
 .application-detail-main-area .srial-number {
   text-align: center;
 }
-
 
 .user-tab-main-area {
   width: 100%;
   margin: auto;
 }
-
 
 .user-tab-main-area .nav-tabs .tab-btn {
   font-size: 14px;
@@ -16059,7 +16039,6 @@ table td {
   outline: none;
 }
 
-
 .user-tab-main-area .nav-tabs .tab-btn:hover {
   background-color: #ff0f60;
   color: #fff;
@@ -16072,7 +16051,6 @@ table td {
 .user-tab-main-area .nav-item {
   margin: 0px 30px 0px 0px;
 }
-
 
 .user-tab-main-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
@@ -16103,27 +16081,13 @@ table td {
   margin: 0px 0px 15px 0px;
 }
 
-/*.users-sessions-main-area {
-box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
-color: #4A4A4A;
-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-background-color: #fff;
-border-radius: 4px;
-width:100%;
-padding: 20px 20px 30px 20px;
-margin: 30px auto;  
-}
-*/
-
 .app-user-main-heading-area h2 {
   font-size: 20px;
   font-weight: 500;
   margin: 30px 0px 15px 0px;
 }
 
-
 .app-user-main-detail-area {
-  /*border: 1px solid #cdcdcd;*/
   display: flex;
   padding: 20px 20px 20px 20px;
   border-radius: 5px;
@@ -16163,10 +16127,6 @@ margin: 30px auto;
   font-weight: 500;
 }
 
-/*.app-user-detail-area p {
- font-size:16px;   
-}*/
-
 .app-user-table-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
   color: #4A4A4A;
@@ -16179,7 +16139,6 @@ margin: 30px auto;
   overflow-x: scroll;
 }
 
-
 .app-user-table-area h2 {
   color: #4A4A4A;
   font-size: 20px;
@@ -16187,7 +16146,6 @@ margin: 30px auto;
   line-height: 1.5rem;
   margin: 0px 0px 20px 10px;
 }
-
 
 .app-user-table-area table th {
   color: #4A4A4A;
@@ -16204,11 +16162,9 @@ margin: 30px auto;
   padding-left: 20px;
 }
 
-
 .app-user-bg-parents {
   background-color: #F6F7FF;
 }
-
 
 .setup-api-keys-main-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
@@ -16220,8 +16176,6 @@ margin: 30px auto;
   padding: 30px 20px 0px 20px;
 }
 
-
-
 .setup-api-keys-main-area h2 {
   color: #4A4A4A;
   font-size: 20px;
@@ -16229,7 +16183,6 @@ margin: 30px auto;
   line-height: 1.5rem;
   margin: 0px 0px 20px 0px;
 }
-
 
 .api-keys-heading-area h2 {
   color: #4A4A4A;
@@ -16261,7 +16214,6 @@ margin: 30px auto;
   width: 100%;
 }
 
-
 .api-copy-btn-area i {
   color: #fff;
   font-size: 20px;
@@ -16276,8 +16228,6 @@ margin: 30px auto;
 .api-keys-all-input-area {
   padding: 0px 0px 20px 0px;
 }
-
-
 
 .centering {
   width: 1300px;
@@ -16334,20 +16284,16 @@ input:checked+.slider:before {
   transform: translateX(30px);
 }
 
-input:focus+.slider {}
-
 .auth-configuration-email-area {
   display: flex;
   margin: 16px 0px 0px 0px;
 }
-
 
 .auth-methods-text-area P span {
   font-weight: 600;
   margin: 0px 5px 0px 0px;
   font-size: 14px;
 }
-
 
 .api-kyes-input-box-rea.redirect-url .form-control {
   height: inherit;
@@ -16386,7 +16332,6 @@ input:focus+.slider {}
   margin: 10px 0px 10px 0px;
 }
 
-
 .application-detail-iput-box .form-control {
   height: inherit;
   padding: 10px 10px;
@@ -16398,7 +16343,6 @@ input:focus+.slider {}
   padding: 40px 0px 0px 0px;
   text-align: center;
 }
-
 
 .application-detail-iput-box .evetn-masge-box .form-control {
   height: 100px;
@@ -16438,14 +16382,11 @@ input:focus+.slider {}
   border-radius: 4px;
   width: 100%;
   padding: 30px 20px 30px 20px;
-  /*display:flex;*/
 }
-
 
 .profile-input-label-area.gender-lable-area {
   margin: -13px 0px 0px 0px;
 }
-
 
 .personal-information-heading h2 {
   color: #4A4A4A;
@@ -16471,12 +16412,7 @@ input:focus+.slider {}
   margin: 40px 0px 0px 0px;
 }
 
-
 .user-img-area {
-  /*width:100px;    
-height:100px;
-border-radius:50%;
-margin:auto;*/
   position: relative;
 }
 
@@ -16486,7 +16422,6 @@ margin:auto;*/
   border-radius: 50%;
   margin: auto;
 }
-
 
 .profile-detail-input-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
@@ -16544,10 +16479,9 @@ margin:auto;*/
 }
 
 .change-poto-btn:hover {
-  background-color: #ff0f60;
+  background-color: #0a5dc2;
   color: #fff;
 }
-
 
 .change-photo-btn-area i {
   margin: 0px 5px 0px 0px;
@@ -16565,10 +16499,6 @@ margin:auto;*/
   margin: 10px 0px 10px 0px;
 }
 
-/*.profile-input-box-area{
-margin:15px 0px 0px 0px;    
-}*/
-
 .profile-input-box-area label {
   margin: 0px 10px 0px 0px;
 }
@@ -16583,7 +16513,6 @@ margin:15px 0px 0px 0px;
   align-items: center;
   justify-content: center;
 }
-
 
 .forget-password-left-area {
   width: 50%;
@@ -16608,7 +16537,6 @@ margin:15px 0px 0px 0px;
   width: 165px;
 }
 
-
 .forget-password-input-area .form-control {
   border: none;
   border-bottom: 1px solid #b43757;
@@ -16625,7 +16553,6 @@ margin:15px 0px 0px 0px;
   font-size: 25px;
   font-weight: 600;
 }
-
 
 .forget-password-input-area p {
   width: 320px;
@@ -16659,19 +16586,16 @@ margin:15px 0px 0px 0px;
   color: #fff;
 }
 
-
 .footer-copyright-main-area {
   position: absolute;
   bottom: 0px;
 }
-
 
 .forget-password-input-area .footer-copyright-main-area p {
   color: #0e2259;
   font-size: 17px;
   padding: 20px 0px 0px 0px;
 }
-
 
 .change-password-main-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
@@ -16692,7 +16616,6 @@ margin:15px 0px 0px 0px;
   margin: 0px 0px 5px 0px;
 }
 
-
 .change-password-lavel-area h2 {
   color: #4A4A4A;
   font-size: 17px;
@@ -16701,7 +16624,6 @@ margin:15px 0px 0px 0px;
   margin: 10px 0px 10px 0px;
 }
 
-
 .change-password-input-box .form-control {
   height: inherit;
   padding: 10px 10px;
@@ -16709,11 +16631,9 @@ margin:15px 0px 0px 0px;
   border-radius: 5px;
 }
 
-
 .change-password-input-box-area {
   margin: 15px 0px 0px 0px;
 }
-
 
 .change-password-submit-area {
   padding: 40px 0px 0px 0px;
@@ -16737,9 +16657,8 @@ margin:15px 0px 0px 0px;
   background-color: #0e2259;
 }
 
-
 .submit-password-change-btn:hover {
-  background-color: #ff0f60;
+  background-color: #0a5dc2;
   color: #fff;
 }
 
@@ -16752,8 +16671,6 @@ margin:15px 0px 0px 0px;
   width: 100%;
   padding: 0px 0px 30px 0px;
 }
-
-
 
 /*.mange-admins-edit-btn {
 font-size: 14px;
@@ -16795,7 +16712,6 @@ table td {
   color: #0e2259;
 }
 
-
 /*.mange-admins-dlt-btn {
  font-size: 14px;
 color: #FFFFFF;
@@ -16812,19 +16728,16 @@ letter-spacing: 0.02857em;
 text-transform: uppercase;    
 }
 
-
 .mange-admins-dlt-btn:hover {
  background-color:#ff0f60;
  color: #FFFFFF;   
 }*/
-
 
 .mange-admins-dlt-btn i {
   font-size: 20px;
   margin: 0px 10px 0px 0px;
   color: #0e2259;
 }
-
 
 .onoffswitch {
   position: relative;
@@ -16842,7 +16755,6 @@ text-transform: uppercase;
   display: block;
   overflow: hidden;
   cursor: pointer;
-  /*border: 2px solid #999999;*/
   border-radius: 20px;
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
 }
@@ -16892,7 +16804,6 @@ text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-
 .onoffswitch-switch {
   display: block;
   width: 20px;
@@ -16928,7 +16839,6 @@ text-transform: uppercase;
   padding: 0px 0px 0px 20px;
 }
 
-
 .subscription-plan-heading-area {
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
   color: #4A4A4A;
@@ -16948,7 +16858,6 @@ text-transform: uppercase;
   margin: 0px 0px 5px 0px;
 }
 
-
 .subscription-plan-heading-area p {
   color: #4A4A4A;
   font-size: 14px;
@@ -16956,7 +16865,6 @@ text-transform: uppercase;
   line-height: 1.5rem;
   margin: 0px 0px 0px 0px;
 }
-
 
 .add-card-main-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
@@ -16983,7 +16891,6 @@ text-transform: uppercase;
   line-height: 1.5rem;
   margin: 30px 0px 15px 0px;
 }
-
 
 .add-card-main-area label {
   color: #4A4A4A;
@@ -17025,7 +16932,6 @@ text-transform: uppercase;
   background-color: #ff0f60;
   color: #fff;
 }
-
 
 .subscription-box-main-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
@@ -17081,12 +16987,10 @@ text-transform: uppercase;
   text-transform: uppercase;
 }
 
-
 .plan-start-btn:hover {
   background-color: #ff0f60;
   color: #fff;
 }
-
 
 .subscription-plan-custmize-btn {
   font-size: 11px;
@@ -17105,7 +17009,6 @@ text-transform: uppercase;
   margin: 0px 20px 0px 0px;
 }
 
-
 .subscription-plan-custmize-btn:hover {
   background-color: #ff0f60;
   color: #fff;
@@ -17121,13 +17024,11 @@ text-transform: uppercase;
   font-size: 25px;
   padding: 8px 0px 0px 5px;
   color: #FF5C93;
-
 }
 
 .input-card-text-area .form-control {
   border: none;
 }
-
 
 .about-subscription-main-area ul {
   padding: 10px 0px 0px 0px;
@@ -17154,12 +17055,10 @@ text-transform: uppercase;
   text-align: center;
 }
 
-
 .contact-heading-area p {
   /*text-align: center;*/
   line-height: 30px;
 }
-
 
 .contact-detail-main-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
@@ -17172,7 +17071,6 @@ text-transform: uppercase;
   margin: auto;
 }
 
-
 .contact-detail-text-main-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
   color: #4A4A4A;
@@ -17184,7 +17082,6 @@ text-transform: uppercase;
   margin: auto;
 }
 
-
 .contact-heading-area h2 {
   color: #4A4A4A;
   font-size: 20px;
@@ -17193,14 +17090,12 @@ text-transform: uppercase;
   margin: 0px 0px 15px 0px;
 }
 
-
 .contact-form-main-area .form-control {
   height: inherit;
   padding: 10px 10px;
   border: 2px solid #cdcdcd;
   border-radius: 5px;
 }
-
 
 .contact-form-main-area label {
   color: #4A4A4A;
@@ -17209,7 +17104,6 @@ text-transform: uppercase;
   line-height: 1.5rem;
   margin: 0px 0px 10px 0px;
 }
-
 
 .contact-form-main-area textarea.form-control {
   height: 100px;
@@ -17224,7 +17118,7 @@ text-transform: uppercase;
   font-size: 14px;
   color: #FFFFFF;
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-  padding: 15px 30px;
+  padding: 11px 30px;
   min-width: 64px;
   box-sizing: border-box;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -17237,10 +17131,10 @@ text-transform: uppercase;
   background-color: #0e2259;
 }
 
-
 .contact-form-submint-btn:hover {
-  background-color: #ff0f60;
+  background-color: #0a5dc2;
   color: #fff;
+  text-decoration: underline;
 }
 
 .input-btn-row-area {
@@ -17285,7 +17179,6 @@ text-transform: uppercase;
   border-radius: 4px;
   padding: 10px 20px 10px 20px;
   margin: 20px 0px 0px 0px;
-
 }
 
 .frequently-detail-main-area {
@@ -17299,27 +17192,22 @@ text-transform: uppercase;
   margin: 30px auto;
 }
 
-
 .faq-accordian-main-area .accordion-button {
   border: none;
   /* padding:10px 0px 10px 0px; */
   padding: 6px 0px 0px 0px;
   font-size: 17px;
   font-weight: 500;
-
 }
-
 
 .faq-accordian-main-area .accordion-button:focus {
   box-shadow: inherit;
 }
 
-
 .faq-accordian-main-area .accordion-button:not(.collapsed) {
   background: transparent;
   color: #4A4A4A;
 }
-
 
 .faq-accordian-main-area .accordion-body {
   padding: 0px 0px 15px 0px;
@@ -17330,12 +17218,10 @@ text-transform: uppercase;
   border: none;
 }
 
-
 .terms-conditions-detail-area h1 {
   font-size: 20px;
   font-weight: 600;
 }
-
 
 .terms-conditions-detail-area p {
   line-height: 25px;
@@ -17352,7 +17238,6 @@ text-transform: uppercase;
   border-radius: 50%;
 }
 
-
 .notification-heading-main-area h2 {
   font-size: 18px;
   font-weight: 500;
@@ -17366,7 +17251,6 @@ text-transform: uppercase;
 .notification-heading-main-area {
   width: 90%;
 }
-
 
 .notification-arrow-hide-parents .accordion-button:after {
   background-image: none;
@@ -17387,15 +17271,12 @@ text-transform: uppercase;
   padding: 10px 0px 0px 0px;
 }
 
-
 .notification-dlt-main-area {
   padding: 15px 0px 0px 0px;
 }
 
 .table-data-search-box {
   position: absolute;
-  /* right: 30px;
-  top: 80px; */
   right: 210px;
   top: 118px;
 }
@@ -17432,17 +17313,13 @@ text-transform: uppercase;
   border: 1px solid #0e2259;
 }
 
-
 .table-data-search-box .search i {
   font-size: 15px;
 }
 
 .face-finger-qrcode-area {
-  /*width: 45px;
-height: 45px;*/
   border-radius: 50%;
   object-fit: cover;
-  /*background-color: #FF5C93;*/
   line-height: 45px;
   text-align: center;
 }
@@ -17451,7 +17328,6 @@ height: 45px;*/
   text-align: center;
   padding: 0px 15px 0px 0px !important;
 }
-
 
 .face-img-area img {
   width: 35px;
@@ -17466,13 +17342,11 @@ height: 45px;*/
   object-fit: contain;
 }
 
-
 /*contact us page css start here*/
 
 .contact-us-form-area {
   margin: 15px 0px 0px 0px;
 }
-
 
 .address-email-contact-phone-area {
   padding: 60px 0px 60px 0px;
@@ -17511,7 +17385,6 @@ height: 45px;*/
   text-align: center;
 }
 
-
 .contact-address-map-marker i {
   line-height: 50px;
   color: #fff;
@@ -17519,7 +17392,6 @@ height: 45px;*/
 }
 
 /*contact us page css end here*/
-
 
 .registration-form-main-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
@@ -17531,7 +17403,6 @@ height: 45px;*/
   padding: 30px 20px 40px 20px;
 }
 
-
 .resgistration-input-box-area {
   margin: 0px 0px 10px 0px;
 }
@@ -17540,8 +17411,6 @@ height: 45px;*/
   font-size: 17px;
   margin: 15px 0px 10px 0px;
 }
-
-
 
 /*resgistration page css start here*/
 
@@ -17560,7 +17429,6 @@ height: 45px;*/
   width: 20%;
 }
 
-
 .account-verified-box {
   position: absolute;
   top: 50%;
@@ -17568,7 +17436,6 @@ height: 45px;*/
   transform: translate(-50%, -50%);
   width: 40%;
 }
-
 
 .resgitration-form-input-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
@@ -17627,7 +17494,6 @@ height: 45px;*/
   cursor: pointer;
 }
 
-
 .resgitration-form-input-area label {
   color: #4A4A4A;
   font-size: 17px;
@@ -17636,21 +17502,12 @@ height: 45px;*/
   margin: 0px 0px 10px 0px;
 }
 
-
 .resgitration-form-input-area .form-control {
   height: inherit;
   padding: 10px 10px;
   border: 2px solid #cdcdcd;
   border-radius: 5px;
 }
-
-/*resgistration page css end here*/
-
-
-
-
-
-/*admin details page css start here*/
 
 .admin-name-img-area {
   display: flex;
@@ -17690,7 +17547,6 @@ height: 45px;*/
   font-size: 15px;
 }
 
-
 .admin-appuser-application-marchent {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
   color: #4A4A4A;
@@ -17701,7 +17557,6 @@ height: 45px;*/
   padding: 20px 20px 20px 20px;
   margin: 30px 0px 0px 0px;
 }
-
 
 .admin-appuser-application-marchent .nav-tabs .tab-btn {
   font-size: 14px;
@@ -17745,7 +17600,6 @@ height: 45px;*/
   border: none;
 }
 
-
 .admin-appuser-table-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
   color: #4A4A4A;
@@ -17760,13 +17614,11 @@ height: 45px;*/
   margin: 55px 0px 0px 0px;
 }
 
-
 .contact-inquirie-area h4 {
   margin: 20px 0px 0px 0px;
   font-weight: 500;
   font-size: 16px;
 }
-
 
 .contact-inquirie-area h4 span {
   font-weight: 400;
@@ -17789,8 +17641,6 @@ height: 45px;*/
 
 /*admin details page css end here*/
 
-
-
 /*send notification page css start here*/
 
 .send-notifications-btn {
@@ -17811,7 +17661,6 @@ height: 45px;*/
   top: 15px;
   right: 15px;
 }
-
 
 .send-notifications-btn:hover {
   background-color: #ff0f60;
@@ -17850,21 +17699,16 @@ height: 45px;*/
 
 /*send notification page css end here*/
 
-
-
-
 /*search result page css start here*/
 
 .modal-backdrop {
   z-index: 10;
 }
 
-
 .modal-dialog {
   max-width: 60%;
   margin: 70px auto;
 }
-
 
 .topbar .navbar-collapse .navbar-nav .app-search .form-control:focus {
   width: 180px;
@@ -17877,7 +17721,6 @@ height: 45px;*/
 .wrap {
   width: 100%;
 }
-
 
 .search {
   width: 100%;
@@ -17913,7 +17756,6 @@ height: 45px;*/
   font-size: 15px;
 }
 
-
 .search-all-reffrence-area {
   display: flex;
   margin: 20px 0px 0px 0px;
@@ -17921,11 +17763,9 @@ height: 45px;*/
   padding: 0px 0px 15px 0px;
 }
 
-
 .saerch-all-icon-area {
   margin: 0px 20px 0px 0px;
 }
-
 
 .saerch-all-icon-area i {
   font-size: 16px;
@@ -17940,7 +17780,6 @@ height: 45px;*/
   color: #FF5C93;
 }
 
-
 .search-show-text-area {
   text-align: center;
   padding: 80px 0px 80px 0px;
@@ -17950,7 +17789,6 @@ height: 45px;*/
   font-size: 25px;
   margin: 0px 10px 0px 0px;
 }
-
 
 .search-show-text-area p {
   font-size: 20px;
@@ -17962,15 +17800,11 @@ height: 45px;*/
   margin: 0px 0px 30px 0px;
 }
 
-
 .search button:focus {
   outline: none;
 }
 
 /*search result page css end here*/
-
-
-
 
 /*settings page css start here*/
 
@@ -18014,7 +17848,6 @@ height: 45px;*/
   margin: 0px 10px 0px 0px;
 }
 
-
 .setting-tab-main-area .nav-tabs .nav-link:focus {
   border: none;
   outline: none;
@@ -18041,26 +17874,21 @@ height: 45px;*/
 
 /*settings page css end here*/
 
-
-
 /*create application page css start here*/
 
 .create-application-main-area {
   text-align: center;
 }
 
-
 .create-application-main-area h2 {
   font-size: 25px;
   margin: 40px 0px 20px 0px;
 }
 
-
 .create-application-main-area p {
   font-size: 16px;
   font-weight: 500;
 }
-
 
 .application-heading-text-area h1 {
   font-size: 25px;
@@ -18071,9 +17899,7 @@ height: 45px;*/
 .application-heading-text-area p {
   font-size: 17px;
   text-align: center;
-
 }
-
 
 .application-list-create-app-btn-area .application-heading-text-area p {
   font-size: 17px;
@@ -18101,13 +17927,7 @@ height: 45px;*/
 
 /*create application page end here*/
 
-
-
-
-
-
 /*loging page css start here*/
-
 
 .login-resset-btn-area {
   display: flex;
@@ -18121,11 +17941,7 @@ height: 45px;*/
   margin: 50px 38px 0px 38px;
 }
 
-
 /*loging page css end here*/
-
-
-
 
 /*logo css start here*/
 
@@ -18138,15 +17954,9 @@ height: 45px;*/
   padding: 0 10px 0 30px;
 }
 
-
 /*logo css end here*/
 
-
-
-
-
 /*signature request page css start here*/
-
 
 .signature-request-detail-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
@@ -18168,7 +17978,6 @@ height: 45px;*/
   margin: 40px 0px 20px 0px;
 }
 
-
 .signature-request-text-area h1 {
   color: #4A4A4A;
   font-size: 20px;
@@ -18189,19 +17998,16 @@ height: 45px;*/
   margin: 0px 0px 30px 0px;
 }
 
-
 .signature-request-text-area h2 span {
   font-size: 22px;
   font-weight: 600;
   margin: 0px 10px 0px 0px;
 }
 
-
 .signature-request-text-area h2 p {
   font-size: 20px;
   margin: 0px 0px 0px 0px;
 }
-
 
 .signature-request-text-area .form-group label {
   color: #4A4A4A;
@@ -18218,13 +18024,10 @@ height: 45px;*/
   border-radius: 5px;
 }
 
-
 .signature-request-text-area p {
   font-size: 20px;
   margin: 5px 0px 0px 0px;
 }
-
-
 
 .checkbox-main-area .form-group {
   display: block;
@@ -18273,11 +18076,9 @@ height: 45px;*/
   transform: rotate(45deg);
 }
 
-
 .reject-accept-btn-section-area {
   margin: 50px 0px 0px 0px;
 }
-
 
 .reject-accept-btn-area {
   text-align: right;
@@ -18309,7 +18110,6 @@ height: 45px;*/
   text-align: left;
 }
 
-
 .accept-btn {
   font-size: 14px;
   color: #FFFFFF;
@@ -18330,7 +18130,6 @@ height: 45px;*/
   background-color: #ff0f60;
   color: #FFFFFF;
 }
-
 
 .send-otp-btn {
   font-size: 14px;
@@ -18359,11 +18158,7 @@ height: 45px;*/
 
 /*signature request page css end here*/
 
-
-
-
 /*singnature resquest signed css start here*/
-
 
 .account-verified-box .signature-request-logo-area img {
   width: 20%;
@@ -18410,7 +18205,6 @@ height: 45px;*/
   text-align: center;
 }
 
-
 .signature-succesfull-signed-area {
   box-shadow: 0px 1px 2px 1px rgb(154 154 204 / 22%);
   color: #4A4A4A;
@@ -18422,9 +18216,6 @@ height: 45px;*/
 }
 
 /*singnature resquest signed css end here*/
-
-
-
 
 /*vendore succesfull signed css start here*/
 
@@ -18460,7 +18251,6 @@ height: 45px;*/
 .vendore-succesfull-signed-msg-area p span {
   font-weight: 600;
 }
-
 
 .sidebar-nav ul .sidebar-item .sidebar-link {
   padding: 10px 0px 10px 15px;
@@ -18506,9 +18296,7 @@ h2.metadata-heading {
   position: relative;
   top: 43px;
   left: -20px;
-
   text-align: right;
-
 }
 
 .application-input-text-box label {
