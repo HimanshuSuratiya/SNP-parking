@@ -59,13 +59,7 @@ const ManageAdmin = () => {
                                         <tbody>
                                             <tr >
                                                 <td>1</td>
-                                                <td>
-                                                    <div className="user-icon-detail-area">
-                                                        <div className="company-user-icon-area">
-                                                            Vishal parking
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                <td> Vishal parking </td>
                                                 <td>Faridabad</td>
                                                 <td>11000</td>
                                                 <td><VisibilityIcon /></td>

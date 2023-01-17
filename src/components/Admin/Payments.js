@@ -8,6 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { DateRangePicker } from 'rsuite';
 import "react-datepicker/dist/react-datepicker.css";
+import "rsuite/dist/rsuite.css";
 
 const Payments = () => {
     const [age, setAge] = React.useState('');

@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Switch, Redirect, withRouter, } from "react-router-dom";
 import classnames from "classnames";
 import { Box } from '@material-ui/core'
-import '../../vishal.css'
 import useStyles from "./styles";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
@@ -28,7 +27,6 @@ import Payments from "../Admin/Payments";
 import ManageLocation from "../Admin/ManageLocation";
 import CustomersParkingDetails from "../Admin/CustomersParkingDetails";
 import AboutPage from "../Admin/AboutPage";
-import '../../vishal.css'
 
 function Layout(props) {
   const classes = useStyles();
