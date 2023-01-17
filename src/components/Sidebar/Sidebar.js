@@ -20,6 +20,8 @@ import EditLocationAltIcon from '@mui/icons-material/EditLocationAlt';
 import ArticleIcon from '@mui/icons-material/Article';
 import useStyles from "./styles";
 import SidebarLink from "./components/SidebarLink/SidebarLink";
+import CarRentalIcon from '@mui/icons-material/CarRental';
+import SpaceBarIcon from '@mui/icons-material/SpaceBar';
 import { useLayoutState, useLayoutDispatch, toggleSidebar, } from "../../context/LayoutContext";
 
 const structure = [
@@ -35,12 +37,23 @@ const structure = [
     link: "/app/managelocation",
     icon: <EditLocationAltIcon />,
   },
-
   {
     id: 5,
     label: "Manage Parking ",
     link: "/app/admin",
     icon: <PersonPinCircleIcon />,
+  },
+  {
+    id: 7,
+    label: "Manage Car",
+    link: "/app/manage-car",
+    icon: <CarRentalIcon />,
+  },
+  {
+    id: 8,
+    label: "List Your Space",
+    link: "/app/list-your-space",
+    icon: <SpaceBarIcon />,
   },
   {
     id: 6,
