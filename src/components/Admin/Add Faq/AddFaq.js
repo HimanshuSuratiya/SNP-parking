@@ -1,22 +1,19 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Dialog from '@mui/material/Dialog';
 import Accordion from 'react-bootstrap/Accordion';
-import Radio from '@mui/material/Radio';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import DeleteForever from '@material-ui/icons/DeleteForever';
+import DialogContentText from '@mui/material/DialogContentText';
 
 function ConfirmationDialogRaw(props) {
     const { onClose, value: valueProp, open, ...other } = props;
     const [value, setValue] = React.useState(valueProp);
     const radioGroupRef = React.useRef(null);
+    const [confirmBox, setConfirmBox] = React.useState(false);
 
     React.useEffect(() => {
         if (!open) {
@@ -42,54 +39,111 @@ function ConfirmationDialogRaw(props) {
         setValue(event.target.value);
     };
 
+    const handleConfirmBoxClickOpen = () => {
+        setConfirmBox(true);
+    };
+
+    const handleConfirmBoxClose = () => {
+        setConfirmBox(false);
+    };
+
     return (
-        <Dialog
-            sx={{ '& .MuiDialog-paper': { width: '100%', maxHeight: 435 } }}
-            maxWidth="xs"
-            TransitionProps={{ onEntering: handleEntering }}
-            open={open}
-            {...other}
-        >
-            <DialogTitle>Phone Ringtone</DialogTitle>
-            <DialogContent dividers>
-                <Accordion>
-                    <Accordion.Item eventKey="0">
-                        <Accordion.Header>Wrapped Bitcoin is now listed on Unity Exchange</Accordion.Header>
-                        <Accordion.Body>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="1">
-                        <Accordion.Header>Vivamus tortor, odio viverra malesuada.</Accordion.Header>
-                        <Accordion.Body>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="3">
-                        <Accordion.Header>Trapped Eitcoin is now listed on Unity Exchange</Accordion.Header>
-                        <Accordion.Body>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="4">
-                        <Accordion.Header>Lindy Uikit on trending</Accordion.Header>
-                        <Accordion.Body>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
-            </DialogContent>
-            <DialogActions>
-                <Button autoFocus onClick={handleCancel}>
-                    Cancel
-                </Button>
-                <Button onClick={handleOk}>Ok</Button>
-            </DialogActions>
-        </Dialog>
+        <>
+            <Dialog
+                sx={{ '& .MuiDialog-paper': { width: '100%', maxHeight: 435 } }}
+                maxWidth="xs"
+                TransitionProps={{ onEntering: handleEntering }}
+                open={open}
+                {...other}
+            >
+                <DialogTitle>List of FAQs</DialogTitle>
+                <DialogContent dividers>
+                    <Accordion>
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header className="Add-faq-main-header">
+                                <div className='px-1 w-100 d-flex align-items-center justify-content-between'>
+                                    <p>Wrapped Bitcoin is now listed on Unity Exchange</p>
+                                    <DeleteForever style={{ color: '#0e2259' }} onClick={handleConfirmBoxClickOpen} />
+                                </div>
+                            </Accordion.Header>
+                            <Accordion.Body>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor
+                            </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="1">
+                            <Accordion.Header className="Add-faq-main-header">
+                                <div className='px-1 w-100 d-flex align-items-center justify-content-between'>
+                                    <p>Wrapped Bitcoin is now listed on Unity Exchange</p>
+                                    <DeleteForever style={{ color: '#0e2259' }} onClick={handleConfirmBoxClickOpen} />
+                                </div>
+                            </Accordion.Header>
+                            <Accordion.Body>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor
+                            </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="2">
+                            <Accordion.Header className="Add-faq-main-header">
+                                <div className='px-1 w-100 d-flex align-items-center justify-content-between'>
+                                    <p>Wrapped Bitcoin is now listed on Unity Exchange</p>
+                                    <DeleteForever style={{ color: '#0e2259' }} onClick={handleConfirmBoxClickOpen} />
+                                </div>
+                            </Accordion.Header>
+                            <Accordion.Body>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor
+                            </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="3">
+                            <Accordion.Header className="Add-faq-main-header">
+                                <div className='px-1 w-100 d-flex align-items-center justify-content-between'>
+                                    <p>Wrapped Bitcoin is now listed on Unity Exchange</p>
+                                    <DeleteForever style={{ color: '#0e2259' }} onClick={handleConfirmBoxClickOpen} />
+                                </div>
+                            </Accordion.Header>
+                            <Accordion.Body>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                </DialogContent>
+                <DialogActions className='main-action-faq'>
+                    <div>
+                        <button className='faq-style-btn me-3' onClick={handleCancel}>
+                            Cancel
+                        </button>
+                        <button className='faq-style-btn me-3' onClick={handleOk}>Ok</button>
+                    </div>
+                </DialogActions>
+            </Dialog>
+            <div>
+                <Dialog
+                    open={confirmBox}
+                    onClose={handleConfirmBoxClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                >
+                    <DialogTitle id="alert-dialog-title">
+                        {"Are you sur you want to delete"}
+                    </DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            Are you sur you want to delete
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions className='main-action-faq'>
+                        <div>
+                            <button className='faq-style-btn me-3' onClick={handleConfirmBoxClose}>Cancel</button>
+                            <button className='faq-style-btn me-3' onClick={handleConfirmBoxClose} >
+                                Confirm
+                            </button>
+                        </div>
+                    </DialogActions>
+                </Dialog>
+            </div>
+        </>
     );
 }
 
@@ -114,6 +168,7 @@ const AddFaq = () => {
             setValue(newValue);
         }
     };
+
 
     return (
         <>
