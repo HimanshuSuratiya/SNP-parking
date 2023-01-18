@@ -29,6 +29,7 @@ import CustomersParkingDetails from "../Admin/CustomersParkingDetails";
 import AboutPage from "../Admin/AboutPage";
 import ManageCar from "../Admin/Manage Car/ManageCar";
 import ListYourSpace from "../Admin/List your space/ListYourSpace";
+import AddFaq from "../Admin/Add Faq/AddFaq";
 
 function Layout(props) {
   const classes = useStyles();
@@ -52,6 +53,7 @@ function Layout(props) {
             {/* <Route path="/app/application-detail/:id" component={ApplicationDetails} /> */}
             <Route path="/app/manage-car" component={ManageCar} />
             <Route path="/app/list-your-space" component={ListYourSpace} />
+            <Route path="/app/add-faq" component={AddFaq} />
             <Route path="/app/merchants" component={ManageMerchants} />
             <Route path="/app/customersdetails" component={CustomersDetails} />
             <Route path="/app/customersparkingdetails" component={CustomersParkingDetails} />

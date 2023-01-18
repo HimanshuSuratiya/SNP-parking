@@ -22,6 +22,7 @@ import useStyles from "./styles";
 import SidebarLink from "./components/SidebarLink/SidebarLink";
 import CarRentalIcon from '@mui/icons-material/CarRental';
 import SpaceBarIcon from '@mui/icons-material/SpaceBar';
+import QuizIcon from '@mui/icons-material/Quiz';
 import { useLayoutState, useLayoutDispatch, toggleSidebar, } from "../../context/LayoutContext";
 
 const structure = [
@@ -32,49 +33,49 @@ const structure = [
     icon: <HomeIcon />
   },
   {
-    id: 783,
+    id: 1,
     label: "Manage Loction ",
     link: "/app/managelocation",
     icon: <EditLocationAltIcon />,
   },
   {
-    id: 5,
+    id: 2,
     label: "Manage Parking ",
     link: "/app/admin",
     icon: <PersonPinCircleIcon />,
   },
   {
-    id: 7,
+    id: 3,
     label: "Manage Car",
     link: "/app/manage-car",
     icon: <CarRentalIcon />,
   },
   {
-    id: 8,
+    id: 4,
     label: "List Your Space",
     link: "/app/list-your-space",
     icon: <SpaceBarIcon />,
   },
   {
-    id: 6,
+    id: 5,
     label: "Manage Coustomers",
     link: "/app/merchants",
     icon: <SupervisorAccount />,
   },
   {
-    id: 29,
+    id: 6,
     label: "Bookings",
     link: "/app/bookings",
     icon: <LibraryBooksIcon />
   },
   {
-    id: 292,
+    id: 7,
     label: "Setting",
     link: "/app/settings",
     icon: <Settings />
   },
   {
-    id: 3003,
+    id: 8,
     label: "payment",
     link: "/app/payment",
     icon: <Payment />
@@ -86,7 +87,7 @@ const structure = [
   //   icon: <SettingsApplications />
   // },
   {
-    id: 1,
+    id: 9,
     label: "Notifications",
     link: "/app/notifications",
     icon: <NotificationsIcon />
@@ -98,7 +99,7 @@ const structure = [
   //   icon: <Subscriptions/>,
   // },
   {
-    id: 7,
+    id: 10,
     label: "Contact Us",
     link: "/app/create-contact-details",
     icon: <ContactSupport />,
@@ -110,24 +111,29 @@ const structure = [
   //   icon: <QuestionAnswer />,
   // },
   {
-    id: 9,
+    id: 11,
     label: "Terms & Services",
     link: "/app/create-terms-and-services",
     icon: <Security />,
   },
   {
-    id: 8,
+    id: 12,
     label: "Privacy Policy",
     link: "/app/create-privacy-policy",
     icon: <VpnKey />,
   },
   {
-    id: 78,
+    id: 13,
+    label: "Add FAQ ",
+    link: "/app/add-faq",
+    icon: <QuizIcon />,
+  },
+  {
+    id: 14,
     label: "About ",
     link: "/app/about-us",
     icon: <ArticleIcon />,
   },
-
 ];
 
 function Sidebar({ location }) {
