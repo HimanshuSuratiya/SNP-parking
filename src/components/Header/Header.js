@@ -15,6 +15,8 @@ import { Badge, Typography } from "../Wrappers";
 import Notification from "../Notification/Notification";
 import { useLayoutState, useLayoutDispatch, toggleSidebar, } from "../../context/LayoutContext";
 import { useUserDispatch, signOut } from "../../context/UserContext";
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+
 
 const notifications = [
   {
@@ -51,6 +53,7 @@ export default function Header(props) {
   const [isNotificationsUnread, setIsNotificationsUnread] = useState(true);
   const [profileMenu, setProfileMenu] = useState(null);
   const [isSearchOpen, setSearchOpen] = useState(false);
+
 
   const signOutUser = () => {
     localStorage.setItem('isAuthenticated', 0)
@@ -179,18 +182,21 @@ export default function Header(props) {
                 classes.headerMenuItem,
               )}
             >
-              <SettingsApplications className={classes.profileMenuIcon} /> Settings
+              <SettingsApplications style={{ color: "#0e2259" }} className={classes.profileMenuIcon} /> Settings
             </MenuItem></a>
           <div className={classes.profileMenuUser}>
-            <Typography
+
+            <Typography style={{ color: "black" }}
               className={classes.profileMenuLink}
               color="primary"
               onClick={() =>
                 signOutUser()
                 // signOut(userDispatch, props.history)
+
               }
+
             >
-              signOut
+              <ExitToAppIcon style={{ color: "#0e2259" }} className={classes.profileMenuIcon} /> signOut
             </Typography>
           </div>
         </Menu>

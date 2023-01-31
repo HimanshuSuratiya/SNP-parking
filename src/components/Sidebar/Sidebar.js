@@ -8,7 +8,7 @@ import {
   VpnKey,
   Security,
   ContactSupport,
-  Payment,
+
   Settings,
 } from "@material-ui/icons";
 import { useTheme } from "@material-ui/styles";
@@ -24,6 +24,7 @@ import CarRentalIcon from '@mui/icons-material/CarRental';
 import SpaceBarIcon from '@mui/icons-material/SpaceBar';
 import QuizIcon from '@mui/icons-material/Quiz';
 import { useLayoutState, useLayoutDispatch, toggleSidebar, } from "../../context/LayoutContext";
+import PaidIcon from '@mui/icons-material/Paid';
 
 const structure = [
   {
@@ -58,7 +59,7 @@ const structure = [
   },
   {
     id: 5,
-    label: "Manage Coustomers",
+    label: "Manage Customers",
     link: "/app/merchants",
     icon: <SupervisorAccount />,
   },
@@ -76,9 +77,9 @@ const structure = [
   },
   {
     id: 8,
-    label: "payment",
+    label: "Payment",
     link: "/app/payment",
-    icon: <Payment />
+    icon: <PaidIcon />
   },
   // {
   //   id: 2,

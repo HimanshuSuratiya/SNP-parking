@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import Pagination from '@mui/material/Pagination'
 import BootstrapSwitchButton from 'bootstrap-switch-button-react';
-
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 const ManageAdmin = () => {
     // let PageSize = 5
     const [activeInactive, setActiveInactive] = useState(true)
@@ -23,6 +23,7 @@ const ManageAdmin = () => {
                         <div className="col-lg-12">
                             <div className="row">
                                 <div className="col-md-7">
+                                    <StarBorderIcon style={{ color: 'red' }} />
                                     <div className="heading-top" >
                                         <h2>Manage Parking</h2>
                                     </div>

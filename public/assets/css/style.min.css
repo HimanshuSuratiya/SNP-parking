@@ -18968,6 +18968,11 @@ select.form-select {
   justify-content: end !important;
 }
 
+/* sidebar Width Increase */
+.makeStyles-drawerOpen-43 {
+  width: 250px !important;
+}
+
 /* Add FAQ */
 
 /* Himanshu Css */

@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const ContactDetails = () => {
+  function numberValidation(e) {
+    let name = e.target.value;
+    console.warn(name);
+    if (isNaN(name)) {
+      window.alert("please enter number only")
+    } else {
+      window.alert("")
+
+    }
+
+  }
 
   return (
     <>
@@ -28,18 +39,22 @@ const ContactDetails = () => {
                     autofocus=""
                     required=""
                     id="name"
+                    autoComplete="off"
+                    onChange={numberValidation}
+
                   />
                 </div>
                 <div className="form-group">
                   <label>Email ID</label>
                   <input
-                    type="text"
+                    type="email"
                     className="form-control field"
                     name="holdername"
                     placeholder="Enter Email ID"
                     autofocus=""
                     required=""
                     id="name"
+                    autoComplete="off"
                   />
                 </div>
                 <div className="form-group">
@@ -52,6 +67,8 @@ const ContactDetails = () => {
                     autofocus=""
                     required=""
                     id="name"
+                    autoComplete="off"
+
                   />
                 </div>
                 <div className="contact-form-submint-btn-area">

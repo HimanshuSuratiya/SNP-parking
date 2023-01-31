@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Dashboard = () => {
+    let nameFromDatabase = [
+        { id: 1, Name: "Elite admin", Status: "SALE", Date: "April 18, 2021", Price: "$24" },
+        { id: 2, Name: "Real Homes WP Theme", Status: "EXTENDED", Date: "April 19, 2021", Price: "$1250" },
+        { id: 3, Name: "Ample Admin", Status: "SALE", Date: "April 19, 2021", Price: "$1250" },
+        { id: 4, Name: "Medical Pro WP Theme", Status: "TAX", Date: "April 20, 2021", Price: "$24" },
+        { id: 5, Name: "Hosting press html", Status: "SALE", Date: "April 21, 2021", Price: "$24" },
+        { id: 6, Name: "Digital Agency PSD", Status: "SALE", Date: "April 23, 2021", Price: "$14" },
+        { id: 7, Name: "Helping Hands WP Theme", Status: "MEMBER", Date: "April 22, 2021", Price: "$64" },
+
+    ];
+    const [names, setNames] = useState(nameFromDatabase);
+
     return (
         <>
             <div className="page-wrapper">
@@ -122,10 +134,12 @@ const Dashboard = () => {
                                     </div>
                                 </div>
                                 <div className="table-responsive">
+
+
                                     <table className="table no-wrap">
                                         <thead>
                                             <tr>
-                                                <th className="border-top-0">#</th>
+                                                <th className="border-top-0">id</th>
                                                 <th className="border-top-0">Name</th>
                                                 <th className="border-top-0">Status</th>
                                                 <th className="border-top-0">Date</th>
@@ -133,55 +147,17 @@ const Dashboard = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td className="txt-oflo">Elite admin</td>
-                                                <td>SALE</td>
-                                                <td className="txt-oflo">April 18, 2021</td>
-                                                <td><span className="text-success">$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td className="txt-oflo">Real Homes WP Theme</td>
-                                                <td>EXTENDED</td>
-                                                <td className="txt-oflo">April 19, 2021</td>
-                                                <td><span className="text-info">$1250</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td className="txt-oflo">Ample Admin</td>
-                                                <td>EXTENDED</td>
-                                                <td className="txt-oflo">April 19, 2021</td>
-                                                <td><span className="text-info">$1250</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td className="txt-oflo">Medical Pro WP Theme</td>
-                                                <td>TAX</td>
-                                                <td className="txt-oflo">April 20, 2021</td>
-                                                <td><span className="text-danger">-$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td className="txt-oflo">Hosting press html</td>
-                                                <td>SALE</td>
-                                                <td className="txt-oflo">April 21, 2021</td>
-                                                <td><span className="text-success">$24</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td className="txt-oflo">Digital Agency PSD</td>
-                                                <td>SALE</td>
-                                                <td className="txt-oflo">April 23, 2021</td>
-                                                <td><span className="text-danger">-$14</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td className="txt-oflo">Helping Hands WP Theme</td>
-                                                <td>MEMBER</td>
-                                                <td className="txt-oflo">April 22, 2021</td>
-                                                <td><span className="text-success">$64</span></td>
-                                            </tr>
+                                            {names.map((item) => {
+                                                return (
+                                                    <tr>
+                                                        <td>{item.id}</td>
+                                                        <td className="txt-oflo">{item.Name}</td>
+                                                        <td>{item.Status}</td>
+                                                        <td className="txt-oflo">{item.Date}</td>
+                                                        <td><span className="text-success">{item.Price}</span></td>
+                                                    </tr>
+                                                )
+                                            })}
                                         </tbody>
                                     </table>
                                 </div>

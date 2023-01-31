@@ -17,7 +17,7 @@ const ManageMerchants = () => {
                             <div className="row">
                                 <div className="col-md-7">
                                     <div className="heading-top" >
-                                        <h2>Manage Coustomers</h2>
+                                        <h2>Manage  customer</h2>
                                     </div>
                                 </div>
                                 <div className="col-md-3">
@@ -40,7 +40,7 @@ const ManageMerchants = () => {
                                         <thead>
                                             <tr>
                                                 <th>Sr. No.</th>
-                                                <th>Customers Name</th>
+                                                <th>Customer Name</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>No. of Parkings</th>
