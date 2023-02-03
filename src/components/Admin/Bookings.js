@@ -2,16 +2,32 @@ import React from 'react';
 import DeleteForever from '@material-ui/icons/DeleteForever';
 import { Link } from "react-router-dom";
 import Pagination from '@mui/material/Pagination'
+import { useState } from 'react';
 
 const Bookings = () => {
-    const data = [
+    const [data, setData] = useState([
         { id: '1', name: 'Himanshu Suratiya', parkingName: 'Parking-1', parkingLocation: 'Noida sector-18 Atta', startDate: '02/11/2022', endDate: '04/11/2022', time: '02:54 pm' },
         { id: '2', name: 'Vishal Singh', parkingName: 'Parking-2', parkingLocation: 'Noida sector-59 Kirtiman', startDate: '04/12/2022', endDate: '14/12/2022', time: '08:27 am' },
         { id: '3', name: 'Sourabh Shukla', parkingName: 'Parking-3', parkingLocation: 'Noida sector-37', startDate: '02/11/2022', endDate: '10/11/2022', time: '12:00 am' },
         { id: '4', name: 'Shivam Suratiya', parkingName: 'Parking-4', parkingLocation: 'Delhi 110096', startDate: '02/10/2022', endDate: '04/10/2022', time: '07:00 am' },
         { id: '5', name: 'Pintu Kashyap', parkingName: 'Parking-5', parkingLocation: 'South Delhi Punjabi bagh', startDate: '02/11/2021', endDate: '02/11/2022', time: '03:04 pm' },
         { id: '6', name: 'Virender Kumar', parkingName: 'Parking-6', parkingLocation: 'Noida sector-63', startDate: '02/11/2022', endDate: '04/11/2022', time: '02:54 pm' },
-    ]
+    ])
+
+    function deleteData(item) {
+        if (window.confirm("Are you sure you want to delete?")) {
+            let copy = data.filter((current) => current !== item);
+            setData([...copy]);
+
+        }
+    }
+    const filterName = (e) => {
+        const search = e.target.value.toLowerCase();
+        const filteredNames = data.filter((names) =>
+            names.name.toLowerCase().includes(search) || names.parkingName.toLowerCase().includes(search) || names.parkingLocation.toLowerCase().includes(search) || names.startDate.toLowerCase().includes(search) || names.endDate.toLowerCase().includes(search) || names.time.toLowerCase().includes(search)
+        );
+        setData(filteredNames);
+    };
 
     return (
         <>
@@ -27,7 +43,7 @@ const Bookings = () => {
                             <div className="col-md-3">
                                 <div className="table-data-search-box-manage">
                                     <div className="search-bar" >
-                                        <input type="text" className="searchTerm-input" placeholder="Search" />
+                                        <input type="text" className="searchTerm-input" placeholder="Search" onChange={filterName} />
                                         <button type="submit" className="searchButtons">
                                             <i className="fa fa-search" aria-hidden="true"></i>
                                         </button>
@@ -61,7 +77,7 @@ const Bookings = () => {
                                             <td>{item.startDate}</td>
                                             <td>{item.endDate}</td>
                                             <td>{item.time}</td>
-                                            <td><Link className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} /></Link></td>
+                                            <td><Link className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} onClick={() => deleteData(item)} /></Link></td>
                                         </tr>
                                     ))
                                 }

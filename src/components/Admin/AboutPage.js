@@ -1,5 +1,18 @@
 import React, { useState, useEffect } from "react";
 const AboutPage = () => {
+    const [about, setAbout] = useState("");
+    const [description, setDescription] = useState("");
+
+
+    function getData(e) {
+
+        e.preventDefault();
+        console.warn("about:", about); <br />
+        console.warn("description:" + description)
+        setAbout("");
+        setDescription("");
+    }
+
 
     return (
         <>
@@ -13,14 +26,14 @@ const AboutPage = () => {
                         </div>
                         <div className="col-lg-12">
                             <div className="contact-notification-detail-main-area">
-                                <form className="send-notifications-form-area">
+                                <form onSubmit={getData} className="send-notifications-form-area">
                                     <div className="form-group">
                                         <label>About </label>
-                                        <input type="text" className="form-control field" name="holdername" placeholder="Enter Heading" autofocus="" required="" id="name" />
+                                        <input type="text" className="form-control field" name="holdername" placeholder="Enter Heading" onChange={(e) => setAbout(e.target.value)} autoComplete="off" autofocus="" required="" id="name" />
                                     </div>
                                     <div className="form-group">
                                         <label>Description</label>
-                                        <textarea className="form-control" placeholder="Enter Description"></textarea>
+                                        <textarea className="form-control" placeholder="Enter Description" onChange={(e) => setDescription(e.target.value)} autoComplete="off"></textarea>
                                     </div>
                                     <div className="contact-form-submint-btn-area">
                                         <button className="contact-form-submint-btn">Submit</button>

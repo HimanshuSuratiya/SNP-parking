@@ -6,8 +6,34 @@ import { Link } from "react-router-dom";
 import DeleteForever from '@material-ui/icons/DeleteForever';
 
 const ManageMerchants = () => {
-    const [activeInactive, setActiveInactive] = useState(true)
+    const [data, setData] = useState([
+        { SNo: "1", custmerName: "Vishal parking", email: "vksingh2992000@gmail.com", phone: "8076053744", numberParking: " 133" },
+        { SNo: "2", custmerName: "rajesh parking", email: "rajesh2992000@gmail.com", phone: "7076053745", numberParking: " 143" },
+        { SNo: "3", custmerName: "shubham parking", email: "shubham1000@gmail.com", phone: "9476053744", numberParking: "187" },
+        { SNo: "4", custmerName: "ankit parking", email: "ankit2992000@gmail.com", phone: "9576053744", numberParking: "108" },
+        { SNo: "5", custmerName: "Vinod parking", email: "vinod2992000@gmail.comd", phone: "7876053744", numberParking: "155" },
+        { SNo: "6", custmerName: "aman parking", email: "aman2992000@gmail.comt", phone: "4776053744", numberParking: "107" }
 
+    ])
+
+    const [activeInactive, setActiveInactive] = useState(true)
+    const filterName = (e) => {
+        const search = e.target.value.toLowerCase();
+        const filteredNames = data.filter((names) =>
+            names.custmerName.toLowerCase().includes(search) || names.email.toLowerCase().includes(search) || names.phone.toLowerCase().includes(search) || names.numberParking.toLowerCase().includes(search)
+        );
+        setData(filteredNames);
+    };
+
+    function deleteData(item) {
+        if (window.confirm("Are you sure you want to delete?")) {
+            let copy = data.filter((current) => current !== item);
+            setData([...copy]);
+
+        }
+
+
+    }
     return (
         <>
             <div className="page-wrapper" style={{ minHeight: "250px" }}>
@@ -23,7 +49,7 @@ const ManageMerchants = () => {
                                 <div className="col-md-3">
                                     <div className="table-data-search-box-manage">
                                         <div className="search-bar" >
-                                            <input type="text" className="searchTerm-input" placeholder="Search" />
+                                            <input type="text" className="searchTerm-input" placeholder="Search" onChange={filterName} />
                                             <button type="submit" className="searchButtons">
                                                 <i className="fa fa-search" aria-hidden="true"></i>
                                             </button>
@@ -50,30 +76,42 @@ const ManageMerchants = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr >
-                                                <td>1</td>
-                                                <td>Vishal Singh</td>
-                                                <td>vksingh2992000@gmail.com</td>
-                                                <td>8076053744</td>
-                                                <td><Link to={`/app/customersparkingdetails`} > 133</Link></td>
-                                                <td><Link to={`/app/customersdetails`} > <VisibilityIcon /></Link></td>
-                                                <td>
-                                                    <Link to={`/app/edit-admin/}`} className="mange-admins-edit-btn"><i className="fas fa-edit"></i></Link>
-                                                    <Link to={`/app/admin/`} className="mange-admins-dlt-btn">                                                            <DeleteForever style={{ color: '#FF5C93' }} />
-                                                    </Link>
-                                                </td>
-                                                <td>
-                                                    <BootstrapSwitchButton
-                                                        onlabel='Active'
-                                                        width={100}
-                                                        offlabel='Inactive'
-                                                        onstyle="success"
-                                                        onChange={() => {
-                                                            setActiveInactive(!activeInactive);
-                                                        }}
-                                                    />
-                                                </td>
-                                            </tr>
+
+
+                                            {
+
+                                                data.map((item) => (
+
+                                                    <tr >
+                                                        <td>{item.SNo}</td>
+                                                        <td>{item.custmerName}</td>
+                                                        <td>{item.email}</td>
+                                                        <td>{item.phone}</td>
+                                                        <td><Link to={`/app/customersparkingdetails`} > {item.numberParking}</Link></td>
+                                                        <td><Link to={`/app/customersdetails`} > <VisibilityIcon /></Link></td>
+                                                        <td>
+                                                            <Link to={`/app/edit-admin/}`} className="mange-admins-edit-btn"><i className="fas fa-edit"></i></Link>
+                                                            <Link to={`/app/admin/`} onClick={() => deleteData(item)} className="mange-admins-dlt-btn">                                                            <DeleteForever style={{ color: '#FF5C93' }} />
+                                                            </Link>
+                                                        </td>
+                                                        <td>
+                                                            <BootstrapSwitchButton
+                                                                onlabel='Active'
+                                                                width={100}
+                                                                offlabel='Inactive'
+                                                                onstyle="success"
+                                                                onChange={() => {
+                                                                    setActiveInactive(!activeInactive);
+                                                                }}
+                                                            />
+                                                        </td>
+                                                    </tr>
+
+
+                                                )
+
+
+                                                )}
                                         </tbody>
                                     </table>
                                     <Pagination count={100} color="primary" />

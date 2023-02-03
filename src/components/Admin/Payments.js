@@ -16,14 +16,25 @@ const Payments = () => {
         setAge(event.target.value);
     };
 
-    const data = [
+    const [data, setData] = useState([
         { id: '1', name: 'Himanshu Suratiya', bookingId: '741258963', payment: '$-40', date: '02/11/2022', time: '02:54 pm' },
         { id: '2', name: 'Vishal Singh', bookingId: '369852147', payment: '$-50', date: '04/12/2022', time: '08:27 am' },
         { id: '3', name: 'Sourabh Shukla', bookingId: '789654123', payment: '$-60', date: '02/11/2022', time: '12:00 am' },
         { id: '4', name: 'Shivam Suratiya', bookingId: '123654987', payment: '$-70', date: '02/10/2022', time: '07:00 am' },
         { id: '5', name: 'Pintu Kashyap', bookingId: '748596321', payment: '$-80', date: '02/11/2021', time: '03:04 pm' },
         { id: '6', name: 'Virender Kumar', bookingId: '485963217', payment: '$-90', date: '02/11/2022', time: '02:54 pm' },
-    ]
+    ])
+
+
+
+
+    function deleteData(item) {
+        if (window.confirm("Are you sure you want to delete?")) {
+            let copy = data.filter((current) => current !== item);
+            setData([...copy]);
+
+        }
+    }
 
     return (
         <>
@@ -83,7 +94,7 @@ const Payments = () => {
                                             <td>{item.payment}</td>
                                             <td>{item.date}</td>
                                             <td>{item.time}</td>
-                                            <td><Link className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} /></Link></td>
+                                            <td><Link className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} onClick={() => deleteData(item)} /></Link></td>
                                         </tr>
                                     ))
                                 }

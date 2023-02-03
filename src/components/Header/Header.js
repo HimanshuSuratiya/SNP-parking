@@ -186,8 +186,11 @@ export default function Header(props) {
             </MenuItem></a>
           <div className={classes.profileMenuUser}>
 
-            <Typography style={{ color: "black" }}
-              className={classes.profileMenuLink}
+            <Typography
+              className={classNames(
+                classes.profileMenuItem,
+                classes.headerMenuItem,
+              )}
               color="primary"
               onClick={() =>
                 signOutUser()
@@ -204,3 +207,5 @@ export default function Header(props) {
     </AppBar>
   );
 }
+
+

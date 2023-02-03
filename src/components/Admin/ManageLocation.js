@@ -5,22 +5,46 @@ import BootstrapDialog from './BootstrapDialog';
 import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 import 'reactjs-popup/dist/index.css';
 import Pagination from '@mui/material/Pagination'
-
+import { Modal } from 'bootstrap';
+import { Button } from 'rsuite';
 const ManageLocation = () => {
     const [activeInactive, setActiveInactive] = useState(true)
     const [age, setAge] = React.useState('');
+    const [name, setName] = useState("Noida59 kirtimaan ,1stflor")
 
     const handleChange = (event) => {
         setAge(event.target.value);
     };
 
-    const data = [
-        { id: '1', add: 'Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522 (257) 563-7401', cap: '100', ic1: <i className="fas fa-edit"></i>, ic2: <DeleteForever style={{ color: '#FF5C93' }} /> },
-        { id: '2', add: 'Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522 (257) 563-7401', cap: '100', ic1: <i className="fas fa-edit"></i>, ic2: <DeleteForever style={{ color: '#FF5C93' }} /> },
-        { id: '3', add: 'Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522 (257) 563-7401', cap: '100', ic1: <i className="fas fa-edit"></i>, ic2: <DeleteForever style={{ color: '#FF5C93' }} /> },
-        { id: '4', add: 'Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522 (257) 563-7401', cap: '100', ic1: <i className="fas fa-edit"></i>, ic2: <DeleteForever style={{ color: '#FF5C93' }} /> },
-        { id: '5', add: 'Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522 (257) 563-7401', cap: '100', ic1: <i className="fas fa-edit"></i>, ic2: <DeleteForever style={{ color: '#FF5C93' }} /> },
-    ]
+    const [data, setData] = useState([
+        { id: '1', location: "Noida59 kirtimaan ,1stflor" },
+        { id: '2', location: "delhi kirtimaan ,2stflor" },
+        { id: '3', location: "utter pradeshkirtimaan ,3stflor" },
+        { id: '4', location: "varanasi kirtimaan ,4stflor" },
+        { id: '5', location: "meerut kirtimaan ,5stflor" },
+    ])
+    function editData(index) {
+        alert(index);
+        const user = data[index];
+
+    }
+    function deleteData(item) {
+        if (window.confirm("Are you sure you want to delete?")) {
+            let copy = data.filter((current) => current !== item);
+            setData([...copy]);
+
+        }
+
+
+    }
+    const filterName = (e) => {
+        const search = e.target.value.toLowerCase();
+        const filteredNames = data.filter((names) =>
+            names.location.toLowerCase().includes(search)
+        );
+        setData(filteredNames);
+    };
+
 
     return (
         <>
@@ -36,7 +60,7 @@ const ManageLocation = () => {
                             <div className="col-md-3">
                                 <div className="table-data-search-box-manage">
                                     <div className="search-bar" >
-                                        <input type="text" className="searchTerm-input" placeholder="Search" />
+                                        <input type="text" className="searchTerm-input" placeholder="Search" onChange={filterName} />
                                         <button type="submit" className="searchButtons">
                                             <i className="fa fa-search" aria-hidden="true"></i>
                                         </button>
@@ -65,13 +89,32 @@ const ManageLocation = () => {
                             </thead>
                             <tbody>
                                 {
-                                    data.map((item) => (
+                                    data.map((item, index) => (
                                         <tr>
-                                            <th scope="row">{item.id}</th>
-                                            <td>Noida59 kirtimaan ,1stflor</td>
+                                            <td scope="row">{item.id}</td>
+                                            <td >{item.location}</td>
                                             <td>
-                                                <Link className="mange-admins-edit-btn"><i className="fas fa-edit"></i></Link>
-                                                <Link className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} /></Link>
+
+                                                <Link className="mange-admins-edit-btn"><i className="fas fa-edit" onClick={() => editData(index)} data-bs-target="#exampleModal" ></i></Link>
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                ...
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <Link className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} onClick={() => deleteData(item)} /></Link>
+
                                             </td>
                                             <td>
                                                 <BootstrapSwitchButton

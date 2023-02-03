@@ -8,12 +8,14 @@ import Dialog from '@mui/material/Dialog';
 import Accordion from 'react-bootstrap/Accordion';
 import DeleteForever from '@material-ui/icons/DeleteForever';
 import DialogContentText from '@mui/material/DialogContentText';
+import { useState } from 'react';
 
 function ConfirmationDialogRaw(props) {
     const { onClose, value: valueProp, open, ...other } = props;
     const [value, setValue] = React.useState(valueProp);
     const radioGroupRef = React.useRef(null);
     const [confirmBox, setConfirmBox] = React.useState(false);
+
 
     React.useEffect(() => {
         if (!open) {
@@ -156,6 +158,9 @@ ConfirmationDialogRaw.propTypes = {
 const AddFaq = () => {
     const [open, setOpen] = React.useState(false);
     const [value, setValue] = React.useState('Dione');
+    const [question, setQuestion] = useState("");
+    const [answer, setAnswer] = useState("");
+
 
     const handleClickListItem = () => {
         setOpen(true);
@@ -170,6 +175,14 @@ const AddFaq = () => {
     };
 
 
+    function getData(e) {
+
+        e.preventDefault();
+        console.warn("question:", question); <br />
+        console.warn("answer:" + answer)
+        setQuestion("")
+        setAnswer("")
+    }
     return (
         <>
             <div className="page-wrapper" style={{ minHeight: "250px" }}>
@@ -183,14 +196,14 @@ const AddFaq = () => {
                         </div>
                         <div className="col-lg-12">
                             <div className="contact-notification-detail-main-area">
-                                <form className="send-notifications-form-area">
+                                <form className="send-notifications-form-area" onSubmit={getData}>
                                     <div className="form-group">
                                         <label>Question</label>
-                                        <input type="text" className="form-control field" name="holdername" placeholder="Enter your question" autofocus="" required="" id="name" />
+                                        <input type="text" className="form-control field" name="holdername" autoComplete='off' onChange={(e) => setQuestion(e.target.value)} placeholder="Enter your question" autofocus="" required="" id="name" />
                                     </div>
                                     <div className="form-group">
                                         <label>Answer</label>
-                                        <textarea className="form-control" placeholder="Enter your answer"></textarea>
+                                        <textarea className="form-control" autoComplete='off' placeholder="Enter your answer" onChange={(e) => setAnswer(e.target.value)} ></textarea>
                                     </div>
                                     <div className="contact-form-submint-btn-area">
                                         <button className="contact-form-submint-btn">Submit</button>

@@ -2,17 +2,24 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const ContactDetails = () => {
-  function numberValidation(e) {
-    let name = e.target.value;
-    console.warn(name);
-    if (isNaN(name)) {
-      window.alert("please enter number only")
-    } else {
-      window.alert("")
 
-    }
+  const [Phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
 
+
+
+  function getData(e) {
+
+    e.preventDefault();
+    console.warn("Phone:", Phone); <br />
+    console.warn("email:", email); <br />
+    console.warn("address:" + address)
+    setPhone("")
+    setEmail("")
+    setAddress("")
   }
+
 
   return (
     <>
@@ -28,7 +35,7 @@ const ContactDetails = () => {
           </div>
           <div className="col-lg-12">
             <div className="contact-notification-detail-main-area">
-              <form className="send-notifications-form-area">
+              <form className="send-notifications-form-area" onSubmit={getData}>
                 <div className="form-group">
                   <label>Phone Number</label>
                   <input
@@ -40,7 +47,7 @@ const ContactDetails = () => {
                     required=""
                     id="name"
                     autoComplete="off"
-                    onChange={numberValidation}
+                    onChange={(e) => setPhone(e.target.value)}
 
                   />
                 </div>
@@ -55,6 +62,7 @@ const ContactDetails = () => {
                     required=""
                     id="name"
                     autoComplete="off"
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -68,15 +76,11 @@ const ContactDetails = () => {
                     required=""
                     id="name"
                     autoComplete="off"
-
+                    onChange={(e) => setAddress(e.target.value)}
                   />
                 </div>
                 <div className="contact-form-submint-btn-area">
-                  <a
-                    className="contact-form-submint-btn"
-                  >
-                    Submit
-                  </a>
+                  <button className="contact-form-submint-btn">Submit</button>
                 </div>
               </form>
             </div>

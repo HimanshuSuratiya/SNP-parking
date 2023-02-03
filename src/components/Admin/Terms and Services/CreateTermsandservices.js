@@ -1,8 +1,18 @@
 import React from "react";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
+import { useState } from "react";
 const CreateTermsandservices = () => {
+  const [heading, setHeading] = useState("");
+  const [description, setDescription] = useState("");
+  function getData(e) {
+
+    e.preventDefault();
+    console.warn("heading:", heading); <br />
+    console.warn("description:" + description)
+    setHeading("")
+    setDescription("")
+  }
 
   return (
     <>
@@ -16,23 +26,26 @@ const CreateTermsandservices = () => {
             </div>
             <div className="col-lg-12">
               <div className="contact-notification-detail-main-area">
-                <form className="send-notifications-form-area">
+                <form className="send-notifications-form-area" onSubmit={getData}>
                   <div className="form-group">
                     <label>Heading</label>
-                    <input type="text" className="form-control field" name="holdername" placeholder="Enter Heading" autofocus="" required="" id="name" />
+                    <input type="text" className="form-control field" name="holdername" placeholder="Enter Heading" autoComplete="off" autofocus="" required="" id="name" onChange={(e) => setHeading(e.target.value)} />
                   </div>
                   <div className="form-group">
                     <label>Description</label>
                     <CKEditor
                       editor={ClassicEditor}
-                      data="<p>Terms and policy</p>"
+                      placeholder="Terms and policy"
+                      autoComplete="off"
                       onReady={editor => {
                         console.log('Editor is ready to use!', editor);
+
                       }}
+                      onChange={(e) => setDescription(e.target.value)}
                     />
                   </div>
                   <div className="contact-form-submint-btn-area">
-                    <a href="#" className="contact-form-submint-btn">Submit</a>
+                    <button className="contact-form-submint-btn">Submit</button>
                   </div>
                 </form>
               </div>

@@ -17692,7 +17692,7 @@ text-transform: uppercase;
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   background-color: #fff;
   border-radius: 4px;
-  width: 60%;
+  width: 80%;
   padding: 30px 20px 40px 20px;
   margin: auto;
 }
@@ -18339,6 +18339,7 @@ h2.metadata-heading {
 
 .makeStyles-linkIconActive-53 {
   color: #ffffff !important;
+
 }
 
 .makeStyles-link-48:hover,
@@ -18353,6 +18354,7 @@ h2.metadata-heading {
 
 .makeStyles-linkTextActive-55 {
   color: White !important;
+  text-decoration: none;
 }
 
 a.mange-admins-dlt-btn svg.MuiSvgIcon-root {
@@ -18388,6 +18390,29 @@ a.mange-admins-dlt-btn svg.MuiSvgIcon-root {
 .booking-wrapper .col-md-3 {
   display: flex;
   align-items: center;
+}
+
+/* vishal css add */
+.makeStyles-link-48 {
+
+  text-decoration: none;
+}
+
+.makeStyles-profileMenuItem-28 {
+  color: black !important;
+}
+
+.makeStyles-profileMenuItem-28:hover svg {
+  color: #fff !important;
+}
+
+.makeStyles-profileMenuLink-30:hover svg {
+  color: #fff !important;
+}
+
+p.MuiTypography-root.makeStyles-profileMenuLink-30.MuiTypography-body1 {
+  font-weight: 400 !important;
+  color: #000 !important;
 }
 
 .booking-wrapper .col-md-3 input {
@@ -18778,8 +18803,8 @@ a:focus {
 }
 
 p.MuiTypography-root.makeStyles-profileMenuLink-30.MuiTypography-body1 {
-  color: #dadbdb !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
+  color: #000 !important;
 }
 
 .Export-btn-managelocation {

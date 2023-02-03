@@ -7,13 +7,38 @@ import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 const ManageAdmin = () => {
     // let PageSize = 5
+    const [data, setData] = useState([
+        { SNo: "1", ParkingName: "Vishal parking", Location: "Faridabad", Capcity: "11000" },
+        { SNo: "2", ParkingName: "rajesh parking", Location: "varanasi", Capcity: "13000" },
+        { SNo: "3", ParkingName: "shubham parking", Location: "delhi", Capcity: "14000" },
+        { SNo: "4", ParkingName: "ankit parking", Location: "jaunpur", Capcity: "15000" },
+        { SNo: "5", ParkingName: "Vinod parking", Location: "allahabad", Capcity: "16000" },
+        { SNo: "6", ParkingName: "aman parking", Location: "meerut", Capcity: "17000" }
+
+    ])
     const [activeInactive, setActiveInactive] = useState(true)
     // const [currentPage, setCurrentPage] = useState(1);
     // const dataTable = useMemo(() => {
     //   const firstPageIndex = (currentPage - 1) * PageSize;
     //   const lastPageIndex = firstPageIndex + PageSize;
     //   return data.slice(firstPageIndex, lastPageIndex);
+
     // }, [currentPage]);
+    const filterName = (e) => {
+        const search = e.target.value.toLowerCase();
+        const filteredNames = data.filter((names) =>
+            names.ParkingName.toLowerCase().includes(search) || names.Location.toLowerCase().includes(search) || names.Capcity.toLowerCase().includes(search)
+        );
+        setData(filteredNames);
+    };
+    function deleteData(item) {
+        if (window.confirm("Are you sure you want to delete?")) {
+            let copy = data.filter((current) => current !== item);
+            setData([...copy]);
+
+        }
+
+    }
 
     return (
         <>
@@ -31,7 +56,7 @@ const ManageAdmin = () => {
                                 <div className="col-md-3">
                                     <div className="table-data-search-box-manage">
                                         <div className="search-bar" >
-                                            <input type="text" className="searchTerm-input" placeholder="Search" />
+                                            <input type="text" className="searchTerm-input" placeholder="Search" onChange={filterName} />
                                             <button type="submit" className="searchButtons">
                                                 <i className="fa fa-search" aria-hidden="true"></i>
                                             </button>
@@ -58,30 +83,36 @@ const ManageAdmin = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr >
-                                                <td>1</td>
-                                                <td> Vishal parking </td>
-                                                <td>Faridabad</td>
-                                                <td>11000</td>
-                                                <td><VisibilityIcon /></td>
-                                                <td>full/remain</td>
-                                                <td>
-                                                    <Link to={`/app/edit-admin/}`} className="mange-admins-edit-btn"><i className="fas fa-edit"></i></Link>
-                                                    <Link to={`/app/admin/`} className="mange-admins-dlt-btn"><DeleteForever style={{ color: '#FF5C93' }} /></Link>
-                                                </td>
-                                                <td>
-                                                    <BootstrapSwitchButton
-                                                        width={100}
-                                                        // checked={app.status}
-                                                        onlabel='Active'
-                                                        offlabel='Inactive'
-                                                        onstyle="success"
-                                                        onChange={() => {
-                                                            setActiveInactive(!activeInactive);
-                                                        }}
-                                                    />
-                                                </td>
-                                            </tr>
+                                            {
+
+                                                data.map((item) =>
+                                                (
+                                                    <tr>
+                                                        <td>{item.SNo}</td>
+                                                        <td>{item.ParkingName}</td>
+                                                        <td>{item.Location}</td>
+                                                        <td>{item.Capcity}</td>
+                                                        <td><Link to={`/app/customersdetails`} > <VisibilityIcon /></Link></td>
+                                                        <td>full/remain</td>
+                                                        <td>
+                                                            <Link to={`/app/edit-admin/}`} className="mange-admins-edit-btn"><i className="fas fa-edit"></i></Link>
+                                                            <Link to={`/app/admin/`} className="mange-admins-dlt-btn"><DeleteForever onClick={() => deleteData(item)} style={{ color: '#FF5C93' }} /></Link>
+                                                        </td>
+                                                        <td>
+                                                            <BootstrapSwitchButton
+                                                                width={100}
+                                                                // checked={app.status}
+                                                                onlabel='Active'
+                                                                offlabel='Inactive'
+                                                                onstyle="success"
+                                                                onChange={() => {
+                                                                    setActiveInactive(!activeInactive);
+                                                                }}
+                                                            />
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            }
                                         </tbody>
                                     </table>
                                     <Pagination count={10} color="primary"
